@@ -68,7 +68,7 @@ int nElements(listint_t **head)
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *rev, *ptr;
+	listint_t *rev, *ptr, *pRev;
 	int i;
 
 	if (head == NULL)
@@ -76,14 +76,15 @@ int is_palindrome(listint_t **head)
 	ptr = *head;
 	rev = copy_list(head);
 	reverse_listint(&rev);
+	pRev = rev;
 	for (i = nElements(head) / 2; i > 0; i--)
 	{
-		if (rev->n != ptr->n)
+		if (pRev->n != ptr->n)
 		{
 			free_listint(rev);
 			return (0);
 		}
-		rev = rev->next;
+		pRev = pRev->next;
 		ptr = ptr->next;
 	}
 	free_listint(rev);
