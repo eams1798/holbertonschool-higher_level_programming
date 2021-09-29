@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """In this module we defiine a class for a square object"""
+
+
 class Square:
     """This class defines a square"""
     def positive_int_required(f):

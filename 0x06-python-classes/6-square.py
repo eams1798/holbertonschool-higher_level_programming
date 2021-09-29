@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """In this module we defiine a class for a square object"""
 
+
 def evaluate_size(value):
     """Checks if the value is a positive integer or raises an exception
     Args:
@@ -16,6 +17,7 @@ def evaluate_size(value):
     else:
         return value
 
+
 def evaluate_position(value):
     """Checks if the value is a tuple with 2 positive integers
     Args:
@@ -30,6 +32,7 @@ def evaluate_position(value):
         return a, b
     else:
         raise TypeError("position must be a tuple of 2 positive integers")
+
 
 class Square:
     """This class defines a square"""
