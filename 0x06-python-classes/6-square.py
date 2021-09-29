@@ -60,7 +60,7 @@ class Square:
         """obj:`int`: returns o changes the value of the attribute`position`"""
         return self.__position
 
-    @size.setter
+    @position.setter
     def position(self, value):
         self.__position = evaluate_position(value)
 

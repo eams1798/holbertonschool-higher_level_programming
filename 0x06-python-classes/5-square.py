@@ -13,7 +13,7 @@ class Square:
                 Returns:
                         function: A function that will be executed
         """
-        def required(self, value):
+        def required(self, value=0):
             """Checks if the function is a positive integer or
                 raises an exception
 
