@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+"""In this module we defiine a class for a square object"""
 class Square:
     """This class defines a square"""
     def positive_int_required(f):
@@ -39,6 +41,8 @@ class Square:
 
     @property
     def size(self):
+        """obj:`int`: returns o changes the value of the attribute`size`
+        """
         return self.__size
 
     @size.setter
@@ -47,4 +51,9 @@ class Square:
         self.__size = value
 
     def area(self):
+        """Returns the current square area.
+
+        Returns:
+            The area of a square
+        """
         return self.__size ** 2
