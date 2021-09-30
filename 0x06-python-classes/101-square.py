@@ -36,6 +36,8 @@ def evaluate_position(value):
 
 class Square:
     """This class defines a square"""
+    global print
+
     def __init__(self, size=0, position=(0, 0)):
         """Initializes an object for a square class.
 
@@ -79,14 +81,18 @@ class Square:
         Returns:
             None
         """
+        p = __import__("sys").stdout.write
         if self.__size == 0:
-            print()
+            p("\n")
         else:
             for a in range(self.__position[1]):
-                print()
+                p("\n")
             for i in range(self.__size):
                 for b in range(self.__position[0]):
-                    print(" ", end="")
+                    p(" ")
                 for j in range(self.__size):
-                    print("#", end="")
-                print()
+                    p("#")
+                p("\n")
+
+    def print(self):
+        my_print(self)
