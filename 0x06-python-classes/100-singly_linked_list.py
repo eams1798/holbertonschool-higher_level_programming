@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """In this module we define two classes to construct a Singly Linked List"""
+
+
 class Node:
     """The class defines a Node for a Singly Linked List"""
     def __init__(self, data, next_node=None):
@@ -39,6 +41,7 @@ class Node:
             self.__next_node = value
         else:
             raise TypeError("next_node must be a Node object")
+
 
 class SinglyLinkedList:
     """In this class, an object will store all the given nodes"""
