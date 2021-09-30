@@ -1,7 +1,14 @@
 #!/usr/bin/python3
+"""In this module we define two classes to construct a Singly Linked List"""
 class Node:
-    """docstring for Node"""
+    """The class defines a Node for a Singly Linked List"""
     def __init__(self, data, next_node=None):
+        """Initializes a object for a Node of a Singly Linked List
+
+        Args:
+            data (int): a piece of data of the node
+            next_node (Node): a reference to the next node
+        """
         if type(data) is not int:
             raise TypeError("data must be an integer")
         self.__data = data
@@ -12,6 +19,7 @@ class Node:
 
     @property
     def data(self):
+        """obj:`int`: returns o changes the value of the attribute `data`"""
         return self.__data
 
     @data.setter
@@ -22,6 +30,7 @@ class Node:
 
     @property
     def next_node(self):
+        """obj:`Node`: returns o changes the value of the attribute `Node`"""
         return self.__next_node
 
     @next_node.setter
