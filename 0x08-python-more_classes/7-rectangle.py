@@ -38,7 +38,7 @@ class Rectangle:
 
     def __str__(self):
         """A printable representation of the class Rectangle"""
-        if self.width != 0 or self.height != 0:
+        if self.width != 0 and self.height != 0:
             prompt = str(self.print_symbol)
             lines = ((prompt * self.width) + "\n") * (self.height - 1)
             last = (prompt * self.width)
@@ -91,4 +91,7 @@ class Rectangle:
         Returns:
             The perimeter of a rectangle
         """
-        return 2 * (self.width + self.height)
+        if self.width == 0 or self.height == 0:
+            return 0
+        else:
+            return 2 * (self.width + self.height)

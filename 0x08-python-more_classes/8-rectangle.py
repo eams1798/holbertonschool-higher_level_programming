@@ -18,6 +18,16 @@ def eval_value(str_value, value):
         return value
 
 
+def eval_rec(str_value, value):
+    """Checks if the given object is an instance of the class Rectangle or
+    raises an exception
+    """
+    if type(value) is not Rectangle:
+        raise TypeError(str_value + " must be an instance of Rectangle")
+    else:
+        return value
+
+
 class Rectangle:
     """A class which defines a rectangle"""
     number_of_instances = 0
@@ -38,7 +48,7 @@ class Rectangle:
 
     def __str__(self):
         """A printable representation of the class Rectangle"""
-        if self.width != 0 or self.height != 0:
+        if self.width != 0 and self.height != 0:
             prompt = str(self.print_symbol)
             lines = ((prompt * self.width) + "\n") * (self.height - 1)
             last = (prompt * self.width)
@@ -91,4 +101,26 @@ class Rectangle:
         Returns:
             The perimeter of a rectangle
         """
-        return 2 * (self.width + self.height)
+        if self.width == 0 or self.height == 0:
+            return 0
+        else:
+            return 2 * (self.width + self.height)
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Compares the area of two rectangles
+
+        Args:
+            rect_1: A rectangle whose area will be compared
+            rect_2: Another rectangle whose area will be compared
+
+        Returns:
+            rect_1 if its area is bigger or equal than rect_2, or
+            rect_2 otherwise
+        """
+        r1 = eval_rec("rect_1", rect_1)
+        r2 = eval_rec("rect_2", rect_2)
+        if r1.area() >= r2.area():
+            return rect_1
+        else:
+            return rect_2
