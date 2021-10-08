@@ -54,6 +54,17 @@ class SinglyLinkedList:
         """
         self.__head = None
 
+    def __str__(self):
+        """A printable version of a Singly Linked List"""
+        itr = self.__head
+        s = ""
+        while itr is not None:
+            s += str(itr.data)
+            if itr.next_node is not None:
+                s += "\n"
+            itr = itr.next_node
+        return s
+
     def sorted_insert(self, value):
         """Insert a node in a position of a linked list where its data
         is less than next node's
@@ -76,12 +87,3 @@ class SinglyLinkedList:
                     aux = aux.next_node
                 new.next_node = aux.next_node
                 aux.next_node = new
-
-    def print(self):
-        """prints in stdout the values of all the nodes of
-        a singly linked list"""
-        p = __import__("sys").stdout.write
-        itr = self.__head
-        while itr is not None:
-            p(str(itr.data) + "\n")
-            itr = itr.next_node

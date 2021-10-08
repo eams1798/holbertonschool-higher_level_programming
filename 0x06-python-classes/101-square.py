@@ -48,6 +48,15 @@ class Square:
         self.__size = evaluate_size(size)
         self.__position = evaluate_position(position)
 
+    def __str__(self):
+        """A printable representation of the class Square"""
+        if self.size != 0:
+            spaces = "\n" * self.position[1]
+            lines = " " * self.position[0] + "#" * self.size
+            sq = (lines + "\n") * (self.size - 1) + lines
+            return spaces + sq
+        return ""
+
     @property
     def size(self):
         """obj:`int`: returns o changes the value of the attribute`size`"""
@@ -75,24 +84,4 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """prints in stdout the square with the character `#` and positions it
-            at the given coordenates
-
-        Returns:
-            None
-        """
-        p = __import__("sys").stdout.write
-        if self.__size == 0:
-            p("\n")
-        else:
-            for a in range(self.__position[1]):
-                p("\n")
-            for i in range(self.__size):
-                for b in range(self.__position[0]):
-                    p(" ")
-                for j in range(self.__size):
-                    p("#")
-                p("\n")
-
-    def print(self):
-        my_print(self)
+        print(self.__str__)
