@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """This module defines a Magic Class for a circle"""
-
-
 import math
+
 
 class MagicClass:
     """Magic class that does same as given bytecode output"""
