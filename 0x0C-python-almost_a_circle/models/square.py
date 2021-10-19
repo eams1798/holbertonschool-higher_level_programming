@@ -16,7 +16,7 @@ class Square(Rectangle):
             y: vertical position
             id:the id of the object
         """
-        sz = wh_val(size, "size")
+        sz = wh_val(size, "width")
         super().__init__(sz, sz, x, y, id)
 
     def __str__(self):
@@ -34,7 +34,7 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
-        self.width = wh_val(value, "size")
+        self.width = wh_val(value, "width")
         self.height = value
 
     def update(self, *args, **kwargs):

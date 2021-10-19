@@ -116,7 +116,7 @@ class Rectangle(Base):
             **kwargs: A dictionary with an attribute and its new value
         """
         attributes = ['id', 'width', 'height', 'x', 'y']
-        if args is not None:
+        if args:
             for atr, arg in zip(attributes, args):
                 setattr(self, atr, arg)
         elif kwargs is not None:
