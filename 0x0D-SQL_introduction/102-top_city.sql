@@ -1,3 +1,5 @@
+-- displays the top 3 of cities temperature during July and August
+-- ordered by temperature
 CREATE TABLE IF NOT EXISTS temp_july_aug
        SELECT *
        FROM temperatures
