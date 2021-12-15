@@ -2,16 +2,12 @@
 /*
  * defined Square class
  */
-const Rectangle = require('./4-rectangle');
- 
-module.exports = class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
-  }
+const Square1 = require('./5-square');
 
-  charPrint(c) {
-    if (c === undefined) super.prompt = 'X';
-    else super.prompt = c;
+module.exports = class Square extends Square1 {
+  charPrint (c) {
+    if (c === undefined) this.prompt = 'X';
+    else this.prompt = c;
     super.print();
   }
 };

@@ -2,13 +2,24 @@
 /*
  * defined Rectangle class
  */
+const util = require('util');
+
 module.exports = class Rectangle {
   constructor (w, h) {
     if (w > 0 && h > 0) {
       this.width = w;
       this.height = h;
       this.prompt = 'X';
+      this.objname = 'Rectangle';
     }
+  }
+
+  [util.inspect.custom] (depth, opts) {
+    return this.toString();
+  }
+
+  toString () {
+    return (this.objname + 'width:' + this.width + 'height:' + this.height);
   }
 
   print () {
