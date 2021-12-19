@@ -13,6 +13,5 @@ class City(Base):
     name = Column(String(128), nullable=False)
     state_id = Column(Integer(), ForeignKey('State.id'), nullable=False)
 
-
     def __str__(self):
         return ('{}: {}'.format(self.id, self.name))
