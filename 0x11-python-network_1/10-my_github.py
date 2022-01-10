@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''fetches status of https://intranet.hbtn.io/status'''
+"""takes Github credentials of an user and shows its id"""
 import requests
 import sys
 
