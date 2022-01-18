@@ -3,23 +3,23 @@
 import requests
 import sys
 
+if __name__ == "__main__":
+    try:
+        rep = sys.argv[1]
+    except:
+        rep = ""
+    datadct = {'q': rep}
 
-try:
-    rep = sys.argv[1]
-except:
-    rep = ""
-datadct = {'q': rep}
+    r = requests.post("http://0.0.0.0:5000/search_user", data=datadct)
 
-r = requests.post("http://0.0.0.0:5000/search_user", data=datadct)
+    try:
+        data = r.json()
+        id = data.get('id')
 
-try:
-    data = r.json()
-    id = data.get('id')
-
-    name = data.get('name')
-    if id is None or name is None:
-        print("No result")
-    else:
-        print("[{}] {}".format(id, name))
-except:
-    print("Not a valid JSON")
+        name = data.get('name')
+        if id is None or name is None:
+            print("No result")
+        else:
+            print("[{}] {}".format(id, name))
+    except:
+        print("Not a valid JSON")
