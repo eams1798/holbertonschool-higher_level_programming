@@ -8,7 +8,7 @@ def matrix_divided(matrix, div):
         matrix: an array of arrays of ints or floats
         div: The divisor
     """
-    l = -1
+    counter = -1
     te = "matrix must be a matrix (list of lists) of integers/floats"
     if type(matrix) is not list:
         raise TypeError(te)
@@ -16,9 +16,9 @@ def matrix_divided(matrix, div):
     for m in range(len(matrix)):
         if type(matrix[m]) is not list:
             raise TypeError(te)
-        if l != -1 and l != len(matrix[m]):
+        if counter != -1 and counter != len(matrix[m]):
             raise TypeError("Each row of the matrix must have the same size")
-        l = len(matrix[m])
+        counter = len(matrix[m])
         div_m.append([])
         for i in range(len(matrix[m])):
             if type(matrix[m][i]) not in (int, float):
